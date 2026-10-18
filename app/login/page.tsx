@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Sparkles, Lock, Mail, ArrowRight, ShieldAlert } from "lucide-react";
+import { Sparkles, Lock, Mail, ArrowRight, ArrowLeft, ShieldAlert } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -42,6 +43,17 @@ export default function LoginPage() {
       {/* Background glowing orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Top Left Navigation: Back to Home */}
+      <div className="absolute top-6 left-6 z-20">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-medium text-slate-400 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 transition-all group backdrop-blur-sm shadow-sm"
+        >
+          <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5 text-slate-400 group-hover:text-white" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
 
       <div className="w-full max-w-md relative z-10">
         {/* Card Header & Branding */}
@@ -116,6 +128,17 @@ export default function LoginPage() {
               )}
             </button>
           </form>
+        </div>
+
+        {/* Return to Homepage Link */}
+        <div className="mt-6 text-center">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Return to Homepage</span>
+          </Link>
         </div>
       </div>
     </div>
