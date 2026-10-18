@@ -174,7 +174,7 @@ Visit [http://localhost:3000](http://localhost:3000) to view the landing page, o
 ```http
 GET /api/content/:key
 ```
-Streams the raw asset directly from storage with optimal `Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800` headers.
+Streams the raw asset directly from storage with fast-updating `Cache-Control: public, max-age=3, s-maxage=5, stale-while-revalidate=10` headers and ETag validation.
 
 #### 2. Get Asset Metadata
 ```http

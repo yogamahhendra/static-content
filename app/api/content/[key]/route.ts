@@ -34,7 +34,7 @@ export async function GET(request: Request, { params }: RouteParams) {
         status: 304,
         headers: {
           ETag: `"${content.checksum}"`,
-          "Cache-Control": "public, max-age=60, s-maxage=300, stale-while-revalidate=86400",
+          "Cache-Control": "public, max-age=3, s-maxage=5, stale-while-revalidate=10",
         },
       });
     }
@@ -62,7 +62,7 @@ export async function GET(request: Request, { params }: RouteParams) {
     }
 
     // Caching & Security headers
-    headers.set("Cache-Control", "public, max-age=60, s-maxage=300, stale-while-revalidate=86400");
+    headers.set("Cache-Control", "public, max-age=3, s-maxage=5, stale-while-revalidate=10");
     headers.set("X-Content-Type-Options", "nosniff");
     headers.set("Content-Disposition", `inline; filename="${content.key}.${content.fileExtension}"`);
 

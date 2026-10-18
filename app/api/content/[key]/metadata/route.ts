@@ -48,7 +48,7 @@ export async function GET(request: Request, { params }: RouteParams) {
       },
       {
         headers: {
-          "Cache-Control": "public, max-age=60, s-maxage=300",
+          "Cache-Control": "public, max-age=3, s-maxage=5",
         },
       }
     );
