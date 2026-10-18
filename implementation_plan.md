@@ -442,7 +442,7 @@ After upload, show:
 Example:
 
 Original: 2.40 MB  
-Optimized: =KB  
+Optimized: 420 KB  
 Saved: 1.98 MB (82.5%)  
 Format: JPEG → WebP
 
